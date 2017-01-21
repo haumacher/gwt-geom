@@ -121,23 +121,26 @@ public abstract class Line2D implements Shape, Cloneable {
          * {@inheritDoc}
          * @since 1.2
          */
-        public double getX1() {
-            return (double) x1;
+        @Override
+		public double getX1() {
+            return x1;
         }
 
         /**
          * {@inheritDoc}
          * @since 1.2
          */
-        public double getY1() {
-            return (double) y1;
+        @Override
+		public double getY1() {
+            return y1;
         }
 
         /**
          * {@inheritDoc}
          * @since 1.2
          */
-        public Point2D getP1() {
+        @Override
+		public Point2D getP1() {
             return new Point2D.Float(x1, y1);
         }
 
@@ -145,23 +148,26 @@ public abstract class Line2D implements Shape, Cloneable {
          * {@inheritDoc}
          * @since 1.2
          */
-        public double getX2() {
-            return (double) x2;
+        @Override
+		public double getX2() {
+            return x2;
         }
 
         /**
          * {@inheritDoc}
          * @since 1.2
          */
-        public double getY2() {
-            return (double) y2;
+        @Override
+		public double getY2() {
+            return y2;
         }
 
         /**
          * {@inheritDoc}
          * @since 1.2
          */
-        public Point2D getP2() {
+        @Override
+		public Point2D getP2() {
             return new Point2D.Float(x2, y2);
         }
 
@@ -169,7 +175,8 @@ public abstract class Line2D implements Shape, Cloneable {
          * {@inheritDoc}
          * @since 1.2
          */
-        public void setLine(double x1, double y1, double x2, double y2) {
+        @Override
+		public void setLine(double x1, double y1, double x2, double y2) {
             this.x1 = (float) x1;
             this.y1 = (float) y1;
             this.x2 = (float) x2;
@@ -196,7 +203,8 @@ public abstract class Line2D implements Shape, Cloneable {
          * {@inheritDoc}
          * @since 1.2
          */
-        public Rectangle2D getBounds2D() {
+        @Override
+		public Rectangle2D getBounds2D() {
             float x, y, w, h;
             if (x1 < x2) {
                 x = x1;
@@ -294,7 +302,8 @@ public abstract class Line2D implements Shape, Cloneable {
          * {@inheritDoc}
          * @since 1.2
          */
-        public double getX1() {
+        @Override
+		public double getX1() {
             return x1;
         }
 
@@ -302,7 +311,8 @@ public abstract class Line2D implements Shape, Cloneable {
          * {@inheritDoc}
          * @since 1.2
          */
-        public double getY1() {
+        @Override
+		public double getY1() {
             return y1;
         }
 
@@ -310,7 +320,8 @@ public abstract class Line2D implements Shape, Cloneable {
          * {@inheritDoc}
          * @since 1.2
          */
-        public Point2D getP1() {
+        @Override
+		public Point2D getP1() {
             return new Point2D.Double(x1, y1);
         }
 
@@ -318,7 +329,8 @@ public abstract class Line2D implements Shape, Cloneable {
          * {@inheritDoc}
          * @since 1.2
          */
-        public double getX2() {
+        @Override
+		public double getX2() {
             return x2;
         }
 
@@ -326,7 +338,8 @@ public abstract class Line2D implements Shape, Cloneable {
          * {@inheritDoc}
          * @since 1.2
          */
-        public double getY2() {
+        @Override
+		public double getY2() {
             return y2;
         }
 
@@ -334,7 +347,8 @@ public abstract class Line2D implements Shape, Cloneable {
          * {@inheritDoc}
          * @since 1.2
          */
-        public Point2D getP2() {
+        @Override
+		public Point2D getP2() {
             return new Point2D.Double(x2, y2);
         }
 
@@ -342,7 +356,8 @@ public abstract class Line2D implements Shape, Cloneable {
          * {@inheritDoc}
          * @since 1.2
          */
-        public void setLine(double x1, double y1, double x2, double y2) {
+        @Override
+		public void setLine(double x1, double y1, double x2, double y2) {
             this.x1 = x1;
             this.y1 = y1;
             this.x2 = x2;
@@ -353,7 +368,8 @@ public abstract class Line2D implements Shape, Cloneable {
          * {@inheritDoc}
          * @since 1.2
          */
-        public Rectangle2D getBounds2D() {
+        @Override
+		public Rectangle2D getBounds2D() {
             double x, y, w, h;
             if (x1 < x2) {
                 x = x1;
@@ -1003,7 +1019,8 @@ public abstract class Line2D implements Shape, Cloneable {
      * no area.
      * @since 1.2
      */
-    public boolean contains(double x, double y) {
+    @Override
+	public boolean contains(double x, double y) {
         return false;
     }
 
@@ -1018,7 +1035,8 @@ public abstract class Line2D implements Shape, Cloneable {
      * no area.
      * @since 1.2
      */
-    public boolean contains(Point2D p) {
+    @Override
+	public boolean contains(Point2D p) {
         return false;
     }
 
@@ -1026,7 +1044,8 @@ public abstract class Line2D implements Shape, Cloneable {
      * {@inheritDoc}
      * @since 1.2
      */
-    public boolean intersects(double x, double y, double w, double h) {
+    @Override
+	public boolean intersects(double x, double y, double w, double h) {
         return intersects(new Rectangle2D.Double(x, y, w, h));
     }
 
@@ -1034,7 +1053,8 @@ public abstract class Line2D implements Shape, Cloneable {
      * {@inheritDoc}
      * @since 1.2
      */
-    public boolean intersects(Rectangle2D r) {
+    @Override
+	public boolean intersects(Rectangle2D r) {
         return r.intersectsLine(getX1(), getY1(), getX2(), getY2());
     }
 
@@ -1054,7 +1074,8 @@ public abstract class Line2D implements Shape, Cloneable {
      * no area.
      * @since 1.2
      */
-    public boolean contains(double x, double y, double w, double h) {
+    @Override
+	public boolean contains(double x, double y, double w, double h) {
         return false;
     }
 
@@ -1069,7 +1090,8 @@ public abstract class Line2D implements Shape, Cloneable {
      * no area.
      * @since 1.2
      */
-    public boolean contains(Rectangle2D r) {
+    @Override
+	public boolean contains(Rectangle2D r) {
         return false;
     }
 
@@ -1077,7 +1099,8 @@ public abstract class Line2D implements Shape, Cloneable {
      * {@inheritDoc}
      * @since 1.2
      */
-    public Rectangle getBounds() {
+    @Override
+	public Rectangle getBounds() {
         return getBounds2D().getBounds();
     }
 
@@ -1094,7 +1117,8 @@ public abstract class Line2D implements Shape, Cloneable {
      *          <code>Line2D</code>.
      * @since 1.2
      */
-    public PathIterator getPathIterator(AffineTransform at) {
+    @Override
+	public PathIterator getPathIterator(AffineTransform at) {
         return new LineIterator(this, at);
     }
 
@@ -1116,7 +1140,8 @@ public abstract class Line2D implements Shape, Cloneable {
      *                  flattened <code>Line2D</code>
      * @since 1.2
      */
-    public PathIterator getPathIterator(AffineTransform at, double flatness) {
+    @Override
+	public PathIterator getPathIterator(AffineTransform at, double flatness) {
         return new LineIterator(this, at);
     }
 
@@ -1128,5 +1153,6 @@ public abstract class Line2D implements Shape, Cloneable {
      * @see        java.lang.Cloneable
      * @since      1.2
      */
-    public abstract Object clone();
+    @Override
+	public abstract Object clone();
 }

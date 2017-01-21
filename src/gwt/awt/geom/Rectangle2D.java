@@ -141,39 +141,44 @@ public abstract class Rectangle2D extends RectangularShape {
          * {@inheritDoc}
          * @since 1.2
          */
-        public double getX() {
-            return (double) x;
+        @Override
+		public double getX() {
+            return x;
         }
 
         /**
          * {@inheritDoc}
          * @since 1.2
          */
-        public double getY() {
-            return (double) y;
+        @Override
+		public double getY() {
+            return y;
         }
 
         /**
          * {@inheritDoc}
          * @since 1.2
          */
-        public double getWidth() {
-            return (double) width;
+        @Override
+		public double getWidth() {
+            return width;
         }
 
         /**
          * {@inheritDoc}
          * @since 1.2
          */
-        public double getHeight() {
-            return (double) height;
+        @Override
+		public double getHeight() {
+            return height;
         }
 
         /**
          * {@inheritDoc}
          * @since 1.2
          */
-        public boolean isEmpty() {
+        @Override
+		public boolean isEmpty() {
             return (width <= 0.0f) || (height <= 0.0f);
         }
 
@@ -200,7 +205,8 @@ public abstract class Rectangle2D extends RectangularShape {
          * {@inheritDoc}
          * @since 1.2
          */
-        public void setRect(double x, double y, double w, double h) {
+        @Override
+		public void setRect(double x, double y, double w, double h) {
             this.x = (float) x;
             this.y = (float) y;
             this.width = (float) w;
@@ -211,7 +217,8 @@ public abstract class Rectangle2D extends RectangularShape {
          * {@inheritDoc}
          * @since 1.2
          */
-        public void setRect(Rectangle2D r) {
+        @Override
+		public void setRect(Rectangle2D r) {
             this.x = (float) r.getX();
             this.y = (float) r.getY();
             this.width = (float) r.getWidth();
@@ -222,7 +229,8 @@ public abstract class Rectangle2D extends RectangularShape {
          * {@inheritDoc}
          * @since 1.2
          */
-        public int outcode(double x, double y) {
+        @Override
+		public int outcode(double x, double y) {
             /*
              * Note on casts to double below.  If the arithmetic of
              * x+w or y+h is done in float, then some bits may be
@@ -255,7 +263,8 @@ public abstract class Rectangle2D extends RectangularShape {
          * {@inheritDoc}
          * @since 1.2
          */
-        public Rectangle2D getBounds2D() {
+        @Override
+		public Rectangle2D getBounds2D() {
             return new Float(x, y, width, height);
         }
 
@@ -263,7 +272,8 @@ public abstract class Rectangle2D extends RectangularShape {
          * {@inheritDoc}
          * @since 1.2
          */
-        public Rectangle2D createIntersection(Rectangle2D r) {
+        @Override
+		public Rectangle2D createIntersection(Rectangle2D r) {
             Rectangle2D dest;
             if (r instanceof Float) {
                 dest = new Rectangle2D.Float();
@@ -278,7 +288,8 @@ public abstract class Rectangle2D extends RectangularShape {
          * {@inheritDoc}
          * @since 1.2
          */
-        public Rectangle2D createUnion(Rectangle2D r) {
+        @Override
+		public Rectangle2D createUnion(Rectangle2D r) {
             Rectangle2D dest;
             if (r instanceof Float) {
                 dest = new Rectangle2D.Float();
@@ -296,7 +307,8 @@ public abstract class Rectangle2D extends RectangularShape {
          * <code>Rectangle2D</code>.
          * @since 1.2
          */
-        public String toString() {
+        @Override
+		public String toString() {
             return getClass().getName()
                 + "[x=" + x +
                 ",y=" + y +
@@ -380,7 +392,8 @@ public abstract class Rectangle2D extends RectangularShape {
          * {@inheritDoc}
          * @since 1.2
          */
-        public double getX() {
+        @Override
+		public double getX() {
             return x;
         }
 
@@ -388,7 +401,8 @@ public abstract class Rectangle2D extends RectangularShape {
          * {@inheritDoc}
          * @since 1.2
          */
-        public double getY() {
+        @Override
+		public double getY() {
             return y;
         }
 
@@ -396,7 +410,8 @@ public abstract class Rectangle2D extends RectangularShape {
          * {@inheritDoc}
          * @since 1.2
          */
-        public double getWidth() {
+        @Override
+		public double getWidth() {
             return width;
         }
 
@@ -404,7 +419,8 @@ public abstract class Rectangle2D extends RectangularShape {
          * {@inheritDoc}
          * @since 1.2
          */
-        public double getHeight() {
+        @Override
+		public double getHeight() {
             return height;
         }
 
@@ -412,7 +428,8 @@ public abstract class Rectangle2D extends RectangularShape {
          * {@inheritDoc}
          * @since 1.2
          */
-        public boolean isEmpty() {
+        @Override
+		public boolean isEmpty() {
             return (width <= 0.0) || (height <= 0.0);
         }
 
@@ -420,7 +437,8 @@ public abstract class Rectangle2D extends RectangularShape {
          * {@inheritDoc}
          * @since 1.2
          */
-        public void setRect(double x, double y, double w, double h) {
+        @Override
+		public void setRect(double x, double y, double w, double h) {
             this.x = x;
             this.y = y;
             this.width = w;
@@ -431,7 +449,8 @@ public abstract class Rectangle2D extends RectangularShape {
          * {@inheritDoc}
          * @since 1.2
          */
-        public void setRect(Rectangle2D r) {
+        @Override
+		public void setRect(Rectangle2D r) {
             this.x = r.getX();
             this.y = r.getY();
             this.width = r.getWidth();
@@ -442,7 +461,8 @@ public abstract class Rectangle2D extends RectangularShape {
          * {@inheritDoc}
          * @since 1.2
          */
-        public int outcode(double x, double y) {
+        @Override
+		public int outcode(double x, double y) {
             int out = 0;
             if (this.width <= 0) {
                 out |= OUT_LEFT | OUT_RIGHT;
@@ -465,7 +485,8 @@ public abstract class Rectangle2D extends RectangularShape {
          * {@inheritDoc}
          * @since 1.2
          */
-        public Rectangle2D getBounds2D() {
+        @Override
+		public Rectangle2D getBounds2D() {
             return new Double(x, y, width, height);
         }
 
@@ -473,7 +494,8 @@ public abstract class Rectangle2D extends RectangularShape {
          * {@inheritDoc}
          * @since 1.2
          */
-        public Rectangle2D createIntersection(Rectangle2D r) {
+        @Override
+		public Rectangle2D createIntersection(Rectangle2D r) {
             Rectangle2D dest = new Rectangle2D.Double();
             Rectangle2D.intersect(this, r, dest);
             return dest;
@@ -483,7 +505,8 @@ public abstract class Rectangle2D extends RectangularShape {
          * {@inheritDoc}
          * @since 1.2
          */
-        public Rectangle2D createUnion(Rectangle2D r) {
+        @Override
+		public Rectangle2D createUnion(Rectangle2D r) {
             Rectangle2D dest = new Rectangle2D.Double();
             Rectangle2D.union(this, r, dest);
             return dest;
@@ -496,7 +519,8 @@ public abstract class Rectangle2D extends RectangularShape {
          * <code>Rectangle2D</code>.
          * @since 1.2
          */
-        public String toString() {
+        @Override
+		public String toString() {
             return getClass().getName()
                 + "[x=" + x +
                 ",y=" + y +
@@ -657,7 +681,8 @@ public abstract class Rectangle2D extends RectangularShape {
      * @param h the height of this <code>Rectangle2D</code>
      * @since 1.2
      */
-    public void setFrame(double x, double y, double w, double h) {
+    @Override
+	public void setFrame(double x, double y, double w, double h) {
         setRect(x, y, w, h);
     }
 
@@ -665,7 +690,8 @@ public abstract class Rectangle2D extends RectangularShape {
      * {@inheritDoc}
      * @since 1.2
      */
-    public Rectangle2D getBounds2D() {
+    @Override
+	public Rectangle2D getBounds2D() {
         return (Rectangle2D) clone();
     }
 
@@ -673,7 +699,8 @@ public abstract class Rectangle2D extends RectangularShape {
      * {@inheritDoc}
      * @since 1.2
      */
-    public boolean contains(double x, double y) {
+    @Override
+	public boolean contains(double x, double y) {
         double x0 = getX();
         double y0 = getY();
         return (x >= x0 &&
@@ -686,7 +713,8 @@ public abstract class Rectangle2D extends RectangularShape {
      * {@inheritDoc}
      * @since 1.2
      */
-    public boolean intersects(double x, double y, double w, double h) {
+    @Override
+	public boolean intersects(double x, double y, double w, double h) {
         if (isEmpty() || w <= 0 || h <= 0) {
             return false;
         }
@@ -702,7 +730,8 @@ public abstract class Rectangle2D extends RectangularShape {
      * {@inheritDoc}
      * @since 1.2
      */
-    public boolean contains(double x, double y, double w, double h) {
+    @Override
+	public boolean contains(double x, double y, double w, double h) {
         if (isEmpty() || w <= 0 || h <= 0) {
             return false;
         }
@@ -873,7 +902,8 @@ public abstract class Rectangle2D extends RectangularShape {
      *          <code>Rectangle2D</code>, one segment at a time.
      * @since 1.2
      */
-    public PathIterator getPathIterator(AffineTransform at) {
+    @Override
+	public PathIterator getPathIterator(AffineTransform at) {
         return new RectIterator(this, at);
     }
 
@@ -898,7 +928,8 @@ public abstract class Rectangle2D extends RectangularShape {
      *          <code>Rectangle2D</code>, one segment at a time.
      * @since 1.2
      */
-    public PathIterator getPathIterator(AffineTransform at, double flatness) {
+    @Override
+	public PathIterator getPathIterator(AffineTransform at, double flatness) {
         return new RectIterator(this, at);
     }
 
@@ -907,7 +938,8 @@ public abstract class Rectangle2D extends RectangularShape {
      * @return the hashcode for this <code>Rectangle2D</code>.
      * @since 1.2
      */
-    public int hashCode() {
+    @Override
+	public int hashCode() {
     	HashCode hashCode = new HashCode();
     	hashCode.append(getX());
     	hashCode.append(getY());
@@ -929,7 +961,8 @@ public abstract class Rectangle2D extends RectangularShape {
      *                     the same values; <code>false</code> otherwise.
      * @since 1.2
      */
-    public boolean equals(Object obj) {
+    @Override
+	public boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }

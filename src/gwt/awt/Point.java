@@ -102,7 +102,8 @@ public class Point extends Point2D implements java.io.Serializable {
      * {@inheritDoc}
      * @since 1.2
      */
-    public double getX() {
+    @Override
+	public double getX() {
         return x;
     }
 
@@ -110,7 +111,8 @@ public class Point extends Point2D implements java.io.Serializable {
      * {@inheritDoc}
      * @since 1.2
      */
-    public double getY() {
+    @Override
+	public double getY() {
         return y;
     }
 
@@ -170,7 +172,8 @@ public class Point extends Point2D implements java.io.Serializable {
      * @param y the Y coordinate of the new location
      * @see #getLocation
      */
-    public void setLocation(double x, double y) {
+    @Override
+	public void setLocation(double x, double y) {
         this.x = (int) Math.floor(x+0.5);
         this.y = (int) Math.floor(y+0.5);
     }
@@ -214,7 +217,8 @@ public class Point extends Point2D implements java.io.Serializable {
      *         an instance of <code>Point2D</code> and has
      *         the same values; <code>false</code> otherwise.
      */
-    public boolean equals(Object obj) {
+    @Override
+	public boolean equals(Object obj) {
         if (obj instanceof Point) {
             Point pt = (Point)obj;
             return (x == pt.x) && (y == pt.y);
@@ -231,7 +235,8 @@ public class Point extends Point2D implements java.io.Serializable {
      *
      * @return  a string representation of this point
      */
-    public String toString() {
+    @Override
+	public String toString() {
         return getClass().getName() + "[x=" + x + ",y=" + y + "]";
     }
 }

@@ -738,7 +738,8 @@ public abstract class Curve {
     }
 
 
-    public String toString() {
+    @Override
+	public String toString() {
         return ("Curve["+
                 getOrder()+", "+
                 ("("+round(getX0())+", "+round(getY0())+"), ")+
