@@ -1,16 +1,18 @@
 package gwt.awt.utils;
 
 public class HashCode {
-	int hashcode = 1837269811; 
+	long hashcode = 0; 
 		
 	@Override
 	public int hashCode() {
-		return hashcode;
+		return (((int) hashcode) ^ ((int) (hashcode >> 32)));
 	}
-	public void append(Double value) {
-		hashcode += (value.hashCode() * 32);
+
+	public void append(double value) {
+		hashcode = hashcode * 31 + Double.doubleToLongBits(value);
 	}
-	public void append(Integer value) {
-		hashcode += (value.hashCode() * 32);
+
+	public void append(int value) {
+		hashcode = hashcode * 31 + value;
 	}
 }
